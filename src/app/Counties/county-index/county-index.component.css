@@ -1,0 +1,21 @@
+.jumbotron
+{
+text-align: center;
+align-items: center;
+font-size: 3em;
+background-color: lightskyblue;
+height: 20px;
+display: flex;
+width: 100%;
+}
+.buto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+border: none;
+
+}
+.btn
+{
+    margin-left: 10px;
+}

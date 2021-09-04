@@ -1,0 +1,45 @@
+<div class="container">
+    <h1>Update Post</h1>
+  
+    <a href="#" routerLink="/counties/index" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="Name">Name:</label>
+            <input 
+                formControlName="name"
+                id="Name" 
+                type="text" 
+                [(ngModel)]="county.name"
+                class="form-control">
+           
+        </div>
+         
+        <div class="form-group">
+            <label for="body">dateCreation</label>
+            <input 
+                formControlName="dateCreation"
+                id="dateCreation" 
+                type="text" 
+                [(ngModel)]="county.dateCreation"
+                class="form-control" readonly>
+        
+            
+        </div>
+
+        <div class="form-group">
+            <label for="body">dateModification</label>
+            <input 
+                formControlName="dateModification"
+                id="dateModification" 
+                type="text" 
+                [(ngModel)]="county.dateModification"
+                class="form-control" readonly>
+            
+            
+        </div>
+        
+        <button class="btn btn-primary" type="submit" >Update</button>
+    </form>
+</div>

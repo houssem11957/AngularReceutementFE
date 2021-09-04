@@ -1,0 +1,53 @@
+.container
+{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+margin-top: 5%;
+}
+.box1
+{
+    width: 50%;
+    align-items: center;
+    margin-left: 10%;
+
+}
+form 
+{
+    width: 500px;
+border: 1px solid black;
+border-radius: 12px;
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+mat-form-field
+{
+    width: 80%;
+}
+.optional
+{
+    width: 80%;
+}
+ng-container
+{
+    display:flex;
+flex-direction: column;
+justify-content: center;
+}
+.btnblock
+{
+    margin: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.sbuttons
+{
+    margin-bottom: 10px;
+}

@@ -1,0 +1,27 @@
+<form  (ngSubmit)="submit()" [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="Name" matInput />
+      <mat-error *ngIf="form.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    
+        <mat-form-field appearance="outline" >
+            <mat-label>Date De creation</mat-label>
+            <input formControlName="dateCreation" matInput  [matDatepicker]="picker"/>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+       <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <mat-label>date Modification</mat-label>
+      <input formControlName="dateModification" matInput  [matDatepicker]="pickers"/>
+  <mat-datepicker-toggle matSuffix [for]="pickers"></mat-datepicker-toggle>
+ <mat-datepicker #pickers></mat-datepicker>
+</mat-form-field>
+    
+    <div>
+<button mat-flat-button color="primary" type="button" (click)="submit()"  [disabled]="form.invalid">Save Change</button>
+<a mat-stroked-button routerLink="/Home">Cancel</a>
+    </div>
+  </form>
+  

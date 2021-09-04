@@ -1,0 +1,19 @@
+
+<h1>Create Person</h1>
+
+<table mat-table class="mat-elevation-z8">
+    <thead>
+<th mat-header-cell>Name</th>
+<th mat-header-cell>Date de creation</th>
+<th mat-header-cell>Datede modification</th>
+</thead>
+<tbody>
+    <tr *ngFor="let person  of persons">
+       <td mat-cell>{{person.name}}</td> 
+       <td mat-cell>{{person.dateCreation}}</td> 
+       <td mat-cell>{{person.dateModification}}</td> 
+      
+    </tr>
+</tbody>
+</table>
+

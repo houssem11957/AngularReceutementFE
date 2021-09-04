@@ -1,0 +1,31 @@
+<p>city-county-index works!</p>
+<table class="table table-bordered hover">
+    <thead>
+       <tr>
+        <th>id</th>
+          <th>City Name</th>
+          <th>Counties</th>
+         
+       </tr>
+    </thead>
+    <tbody>
+       <tr>
+           <td>
+            {{cities.id}}  
+           </td>
+           <td>
+            <span>  {{cities.name}}</span>
+           </td>
+           <td>
+           
+            <span class="badge" *ngFor="let tara of counties" >
+                <td> {{tara.name}}</td>
+            </span>
+           </td>
+       </tr>
+        
+         
+             
+      
+    </tbody>
+ </table>

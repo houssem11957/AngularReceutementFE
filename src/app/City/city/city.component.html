@@ -1,0 +1,50 @@
+<div class="container">
+<div class="box">
+
+</div>
+<div class="box1">
+<form  (ngSubmit)="submit()" [formGroup]="form">
+  <label class="display-4">Add New City</label>
+  <label class="display-5"> City Name</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput />
+      
+    </mat-form-field>
+
+   
+
+
+    <label class="display-5"> Counties</label>
+    <ng-container formArrayName="countyId">
+      <ng-container *ngFor="let group of CountyArray.controls; let i =index;" [formGroupName]="i">
+       <div class="optional" [formGroup]="group">
+         <mat-form-field >
+           <mat-select placeholder="Counties*" #clientValue  (selectionChange)="changeClient($event.value)" formControlName="id">
+           <mat-option  *ngFor="let client of counties" [value]="client.id" name="id" ngDefaultControl>
+             {{client.name}}
+           </mat-option>
+         </mat-select>
+       </mat-form-field>
+      
+       </div>
+      </ng-container>
+      </ng-container>
+      <div class="btnblock">
+      <button type="button" (click)="addmcounty()" class="btn btn-dark ">Add</button>
+    
+    </div>
+    
+
+
+
+   
+    
+    <div class="sbuttons">
+<button mat-flat-button color="primary" type="button" (click)="submit()"  [disabled]="form.invalid" class="btn btn-primaty">Save Change</button>
+<a mat-stroked-button routerLink="/Home">Cancel</a>
+    </div>
+  </form>
+  
+</div>
+</div>

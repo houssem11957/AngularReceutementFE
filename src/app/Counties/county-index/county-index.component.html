@@ -1,0 +1,28 @@
+
+
+    
+    <table class="table table-bordered hover">
+       <thead>
+          <tr>
+            <th>Id</th>
+             <th>Name</th>
+             <th>Added On</th>
+             <th>Update On</th>
+             <th>Manage Content</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor="let county of counties; let i = index">
+            <td>{{ i+1 }}</td>
+             <td>{{ county.name }}</td>
+             <td>{{ county.dateCreation }}</td>
+             <td>{{ county.dateModification}}</td>
+            
+             <td class="buto">
+                <button type="button"  [routerLink]="['/County/', county.id, 'edit']"  class="btn btn-outline-success">Edit</button>
+                <button type="button" (click)="deletePost(county.id)" class="btn btn-outline-danger" >Delete</button>
+             </td>
+          </tr>
+       </tbody>
+    </table>
+ 

@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="box">
+    
+    </div>
+    <div class="box1">
+    <form  (ngSubmit)="submit()" [formGroup]="form">
+      <label class="display-4">Edit City</label>
+      <label class="display-5"> City Name</label>
+      <div class="form-group">
+        <label for="Name">Name:</label>
+        <input 
+            formControlName="name"
+            id="Name" 
+            type="text" 
+            [(ngModel)]="city.name"
+            class="form-control">
+       
+    </div>
+    
+    <div class="checker">
+    <div>
+      <label class="display-6"> Remove from the Actual Counties</label>
+     
+      <div class="checkcontainer">
+           <div *ngFor="let client of countInCityCounties"   >
+            <mat-checkbox  [myvalue]="client.id" (change)="changeClient($event,client)" name="id" >
+        {{ client.name }}
+        </mat-checkbox>
+      
+      </div>
+    </div>
+        </div>
+<div>
+    <label class="display-6">Add Counties</label>
+   
+    <div class="checkcontainer">
+         <div *ngFor="let client of counties" [value]="client.id" name="id"  >
+       
+          <mat-checkbox    [myvalue]="client.id" (change)="changeClientAdder($event,client)" name="id" >>
+      {{ client.name }}
+      </mat-checkbox>
+    
+    </div>
+  </div>
+      </div>
+<!--
+
+
+        <label class="display-5"> Counties</label>
+        <ng-container formArrayName="countyId">
+          <ng-container *ngFor="let group of CountyArray.controls; let i =index;" [formGroupName]="i">
+           <div class="optional" [formGroup]="group">
+             <mat-form-field >
+               <mat-select placeholder="Counties*" #clientValue  (selectionChange)="changeClient($event.value)" formControlName="id">
+               <mat-option  *ngFor="let client of counties" [value]="client.id" name="id" ngDefaultControl>
+                 {{client.name}}
+               </mat-option>
+             </mat-select>
+           </mat-form-field>
+          
+           </div>
+          </ng-container>
+          </ng-container>
+            <div class="btnblock">
+          <button type="button" (click)="addmcounty()" class="btn btn-dark ">Add</button>
+        
+        </div>
+-->
+
+        
+        
+    
+</div>  
+    
+       
+        
+        <div class="sbuttons">
+    <button mat-flat-button color="primary" type="button" (click)="submit()"  [disabled]="form.invalid" class="btn btn-primaty">Save Change</button>
+    <a mat-stroked-button routerLink="/Home">Cancel</a>
+        </div>
+      </form>
+      
+    </div>
+    </div>

@@ -1,0 +1,27 @@
+
+
+    
+    <table class="table table-bordered hover">
+        <thead>
+           <tr>
+            <th>id</th>
+              <th>Name</th>
+              <th></th>
+             
+           </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor="let city of cities;let i =index">
+            <td>{{ i+1 }}</td>
+              <td>{{ city.name }}</td>
+            
+             
+              <td>
+               <button type="button"  [routerLink]="['/City/', city.id, 'view']"  class="btn btn-outline-success">Details</button>
+               <button type="button"  [routerLink]="['/City/', city.id, 'edit']"  class="btn btn-outline-success">Edit</button>
+               <button type="button" (click)="deletePost(city.id)" class="btn btn-outline-danger" >Delete</button>
+              </td>
+           </tr>
+        </tbody>
+     </table>
+  
